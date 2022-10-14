@@ -1,0 +1,70 @@
+.split {
+	height: 100%;
+	width: 50%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 0px;
+}
+
+
+
+.manaBox {
+	opacity : 0.3;
+}
+.manaBox:checked {
+	opacity : 1;
+}
+.cardButton {
+	background-color: white;
+	border: none;
+	color: black;
+	width : 50%;
+	text-align: center;
+	text-decoration: none;
+	float : left;
+	font-size: 16px;
+}
+.cardButton:hover {
+	background-color: red;
+	color: white;
+}
+.left {
+	left: 0;
+	background : #92B6C8;
+}
+
+.right {
+	right: 0;
+	background: #92B6C8;
+}
+.nameBox {
+	font-family : "Beleren Bold";
+	background: #92B6a8;
+	font-size: 15px;
+}
+.typeLine {
+	font-family : "Beleren Bold";
+	background: #22A2a8;
+	font-size: 12px;
+}
+.oracleBox {
+	font-family : "Mplantin";
+	background: #92B6a8;
+	font-size: 13px;
+}
+.ptBox {
+	font-family : "Beleren Bold";
+	background: #22A2a8;
+	font-size: 18px;
+	text-align: right;
+}
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.rotated {
+	transform : rotatate(180deg);
+}

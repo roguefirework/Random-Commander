@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Random Commander Generator</title>
+	<link href="https://unpkg.com/@saeris/typeface-beleren-bold@latest/index.css" rel="stylesheet" type="text/css" />
+	<link href="https://alexandrearpin.com/mtg-font/css/magic-font.css" rel="stylesheet" type ="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div>
+		<div class="split left">
+			<img id="iCardImage" width=auto height=75% height=auto class="center" src="https://cards.scryfall.io/png/front/5/2/52558748-6893-4c72-a9e2-e87d31796b59.png?1559959349">
+			<div>
+				<button class="cardButton" id="iRandomCommander" type="button" onclick="getNewCard()" title="New Commander">Randomize</button>
+				<button class="cardButton" id="iFlipCommander" type="button" onclick="flipCard()" title="Flip Card">Flip Card</button>
+			</div>
+			<div>
+				<input type="checkbox" class>
+			</div>
+		</div>
+		<div class="split right">
+			<div id="iCardName" class="nameBox">
+				Fblthp, the Lost
+			</div>
+			<div id="iTypeLine" class="typeLine">
+				Legendary Creature - Homunclus
+			</div>
+			<div id="iOracleText" class="oracleBox">
+				The oracle text is totally lost
+			</div>
+			<div id="iPowerToughness" class="ptBox">
+				1/1
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="script.js"></script>
+</html>
