@@ -30,10 +30,10 @@ const fetchCard = async () => {
 	searchTerm = scryfallUrl;
 	if(creatureTypeInput.value != "")
 	{
-		console.log(creatureTypeInput.value)
+
 		searchTerm += "type:"+creatureTypeInput.value
 	}
-
+	
 	
 	const request = await fetch(searchTerm);
 
@@ -73,8 +73,14 @@ const getNewCard = async () => {
 	cardImage.style.transform = 'rotate(0deg)';
 	cardFace = 0;
 	const card = await fetchCard().catch(handleErrors);
-	displayedCard = card;
 
+	if(card.object != "card")
+	{
+		alert("Something went wrong: "+card.details)
+		return;
+	}
+	displayedCard = card;
+	
 	await checkCommanderLegality(card);
 	if(card.image_uris != undefined)
 	{
