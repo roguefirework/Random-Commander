@@ -3,7 +3,8 @@ oracleText = document.getElementById('iOracleText');
 powerToughness = document.getElementById("iPowerToughness");
 cardImage = document.getElementById("iCardImage");
 typeLine = document.getElementById("iTypeLine");
-scryfallUrl = "https://scryfallproxy.atticuspak.repl.co/random/is:commander"
+creatureTypeInput =  document.getElementById("iCreatureType");
+scryfallUrl = "https://scryfallproxy.atticuspak.repl.co/random/is:commander "
 // Display promise errors
 cardFace = 0;
 cardFaces = 1;
@@ -26,7 +27,16 @@ const handleErrors = (err) => {
 };
 
 const fetchCard = async () => {
-	const request = await fetch(scryfallUrl);
+	searchTerm = scryfallUrl;
+	if(creatureTypeInput.value != "")
+	{
+		console.log(creatureTypeInput.value)
+		searchTerm += "type:"+creatureTypeInput.value
+	}
+
+	
+	const request = await fetch(searchTerm);
+
 	const card = await request.json();
 	return card;
 };
@@ -39,6 +49,7 @@ const checkCommanderLegality = async (card) => {
 };
 
 const renderCard = async (card) => {
+	
     cardName.innerText = card.name;
     oracleText.innerText = card.oracle_text;
 	if(card.power != undefined)
@@ -63,6 +74,7 @@ const getNewCard = async () => {
 	cardFace = 0;
 	const card = await fetchCard().catch(handleErrors);
 	displayedCard = card;
+
 	await checkCommanderLegality(card);
 	if(card.image_uris != undefined)
 	{

@@ -8,14 +8,10 @@
 	padding-top: 0px;
 }
 
-
-
-.manaBox {
-	opacity : 0.3;
+.inputField {
+	display: flex;
 }
-.manaBox:checked {
-	opacity : 1;
-}
+
 .cardButton {
 	background-color: white;
 	border: none;
